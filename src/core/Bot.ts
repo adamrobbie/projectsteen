@@ -1,7 +1,7 @@
 import { Bot, BotConfig, BotStatus } from '../types/bot.js';
 import { BaseEvent, EventSource, EventType } from '../types/events.js';
 
-export class DefaultBot implements Bot {
+export class SteenBot implements Bot {
   private config: BotConfig;
   private status: BotStatus;
   private pollInterval: NodeJS.Timeout | null;

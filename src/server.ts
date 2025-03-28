@@ -1,4 +1,4 @@
-import { DefaultBot } from './core/Bot.js';
+import { SteenBot } from './core/Bot.js';
 import { BotConfig } from './types/bot.js';
 import dotenv from 'dotenv';
 
@@ -6,16 +6,16 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  let bot: DefaultBot | null = null;
+  let bot: SteenBot | null = null;
   
   try {
-    console.log('Starting AI Scrum Master Bot...');
+    console.log('Starting Steen Bot...');
 
     // Create bot configuration
     const config: BotConfig = {
-      id: 'scrum-master-bot',
-      name: 'AI Scrum Master Bot',
-      description: 'An AI-powered Scrum Master bot',
+      id: 'steen-bot',
+      name: 'Steen Bot',
+      description: 'An AI-powered Scrum Master bot named after Steen',
       version: '1.0.0',
       settings: {
         pollInterval: 60000, // 1 minute
@@ -26,8 +26,8 @@ async function main() {
     };
 
     // Create bot instance
-    console.log('Creating bot instance...');
-    bot = new DefaultBot(config);
+    console.log('Creating Steen Bot instance...');
+    bot = new SteenBot(config);
     
     // Set up error handling
     bot.onError((error) => {
@@ -49,11 +49,11 @@ async function main() {
     console.log('Starting bot...');
     await bot.start();
 
-    console.log('Bot started successfully!');
+    console.log('Steen Bot started successfully!');
 
     // Handle graceful shutdown
     const shutdown = async (signal: string) => {
-      console.log(`Received ${signal} signal. Shutting down...`);
+      console.log(`Received ${signal} signal. Shutting down Steen Bot...`);
       if (bot) {
         await bot.stop();
       }
@@ -64,7 +64,7 @@ async function main() {
     process.on('SIGTERM', () => shutdown('SIGTERM'));
 
   } catch (error) {
-    console.error('Failed to start bot:', error instanceof Error ? error.message : 'Unknown error');
+    console.error('Failed to start Steen Bot:', error instanceof Error ? error.message : 'Unknown error');
     if (error instanceof Error && error.stack) {
       console.error('Stack trace:', error.stack);
     }

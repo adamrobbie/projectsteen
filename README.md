@@ -24,6 +24,92 @@ An intelligent, modular, and extensible AI-powered Scrum Master bot that manages
    - Support scheduled and event-driven execution of tasks
    - Enable easy configuration and modification of bot behaviors
 
+## Target Users
+
+The AI Scrum Master bot is designed to serve multiple stakeholders in the software development process:
+
+1. **Development Teams**
+   - Self-organizing teams who want to automate routine Scrum activities
+   - Teams looking to reduce manual overhead in sprint management
+   - Teams that need help with task tracking and coordination
+   - Teams working across multiple tools and services
+
+2. **Scrum Masters**
+   - Scrum Masters who want to focus on high-value activities
+   - Scrum Masters managing multiple teams
+   - Scrum Masters looking for data-driven insights
+   - Scrum Masters who need help with administrative tasks
+
+3. **Project Managers**
+   - Project managers overseeing multiple teams
+   - Project managers needing better visibility into team performance
+   - Project managers looking for automated reporting
+   - Project managers managing complex dependencies
+
+4. **Team Leads**
+   - Technical leads who need better team coordination
+   - Team leads managing distributed teams
+   - Team leads looking for automated workload distribution
+   - Team leads needing help with blocker resolution
+
+### Key Benefits
+
+1. **For Teams**
+   - Reduced administrative overhead
+   - Automated task tracking and updates
+   - Better visibility into team progress
+   - Automated dependency management
+   - Streamlined communication
+
+2. **For Scrum Masters**
+   - Focus on coaching and team improvement
+   - Automated sprint ceremonies
+   - Data-driven retrospectives
+   - Automated reporting and metrics
+   - Better team insights
+
+3. **For Project Managers**
+   - Real-time project visibility
+   - Automated progress tracking
+   - Risk identification
+   - Resource optimization
+   - Cross-team coordination
+
+4. **For Team Leads**
+   - Better team coordination
+   - Automated workload distribution
+   - Blocker resolution assistance
+   - Performance tracking
+   - Team capacity management
+
+### Management Model
+
+The bot is designed to be a **team-first tool** that can be managed by:
+
+1. **Team Level**
+   - Teams can configure and manage their own rules
+   - Teams can customize their workflows
+   - Teams can set their own priorities
+   - Teams can manage their own integrations
+
+2. **Organization Level**
+   - Organizations can set global policies
+   - Organizations can manage integrations
+   - Organizations can set security policies
+   - Organizations can manage access controls
+
+3. **Hybrid Approach**
+   - Teams have autonomy over daily operations
+   - Management can set guardrails and policies
+   - Both levels can collaborate on configuration
+   - Clear separation of concerns
+
+This approach ensures that:
+- Teams maintain their autonomy
+- Management has necessary oversight
+- The tool scales with the organization
+- Security and compliance are maintained
+
 ## Core Responsibilities
 
 The AI Scrum Master bot is designed to handle the following core responsibilities:
@@ -141,6 +227,29 @@ The bot operates on an event-driven architecture that handles multiple integrati
    - State recovery
    - Event replay capability
    - Audit logging
+
+### Event Interfaces
+
+The system defines a comprehensive set of event interfaces that standardize communication between different components:
+
+1. **Base Event Structure**
+   - Common fields for all events (id, timestamp, source, type)
+   - Standardized metadata for tracking and correlation
+   - Type-safe payload definitions
+
+2. **Domain-Specific Events**
+   - Task Events: Creation, updates, completion, blocking
+   - Sprint Events: Start, end, metrics, blockers
+   - Team Events: Availability, workload, blockers
+   - Integration Events: Status, sync, errors
+
+3. **Event Documentation**
+   Detailed documentation for all event types and their structures can be found in [docs/events.md](docs/events.md), including:
+   - Interface definitions
+   - Example payloads
+   - Processing guidelines
+   - Validation rules
+   - Correlation strategies
 
 ### Rules Engine
 

@@ -142,6 +142,45 @@ The bot operates on an event-driven architecture that handles multiple integrati
    - Event replay capability
    - Audit logging
 
+### Rules Engine
+
+The bot includes a flexible and extensible rules engine that processes events and triggers appropriate actions:
+
+1. **Rule Structure**
+   - Conditions: Define when a rule should be triggered
+   - Actions: Define what should happen when conditions are met
+   - Priority: Determines the order of rule execution
+   - Metadata: Additional information about the rule
+
+2. **Built-in Conditions**
+   - Event Type Matching
+   - Event Source Matching
+   - Payload Pattern Matching
+   - Metadata Matching
+   - Time-based Conditions
+   - Custom Conditions
+
+3. **Built-in Actions**
+   - Task Updates
+   - Notifications
+   - Task Creation
+   - Sprint Updates
+   - Custom Actions
+
+4. **Rule Management**
+   - Dynamic rule addition/removal
+   - Rule enabling/disabling
+   - Rule prioritization
+   - Rule persistence
+   - Rule validation
+
+5. **Rule Processing**
+   - Priority-based execution
+   - Parallel condition evaluation
+   - Sequential action execution
+   - Error handling and recovery
+   - Rule execution logging
+
 ### Integration Services
 
 Currently supported integrations:

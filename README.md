@@ -77,6 +77,71 @@ The AI Scrum Master bot is designed to handle the following core responsibilitie
    - Team coordination service
    - Metrics service
 
+### Event System Architecture
+
+The bot operates on an event-driven architecture that handles multiple integration streams:
+
+1. **Event Streams**
+   - GitHub Events (PRs, Issues, Comments)
+   - JIRA Events (Issues, Comments, Status Changes)
+   - System Events (Scheduled Tasks, Alerts)
+   - User Events (Web Interface Actions)
+
+2. **Event Processing Pipeline**
+   - Event Ingestion Layer
+     - Webhook handlers for external services
+     - Scheduled task triggers
+     - User action handlers
+   
+   - Event Normalization Layer
+     - Standardized event format
+     - Event enrichment
+     - Context preservation
+   
+   - Event Routing Layer
+     - Event type classification
+     - Priority-based routing
+     - Load balancing
+   
+   - Event Processing Layer
+     - Rule evaluation
+     - Action execution
+     - State management
+   
+   - Event Response Layer
+     - Action execution
+     - External service updates
+     - User notifications
+
+3. **Event Types**
+   - Task Events
+     - Task created
+     - Task updated
+     - Task completed
+     - Task blocked
+   
+   - Sprint Events
+     - Sprint started
+     - Sprint ended
+     - Sprint blocked
+     - Sprint metrics updated
+   
+   - Team Events
+     - Team member availability
+     - Workload changes
+     - Blockers identified
+   
+   - Integration Events
+     - Service connection status
+     - Sync status
+     - Error events
+
+4. **Event State Management**
+   - Event persistence
+   - State recovery
+   - Event replay capability
+   - Audit logging
+
 ### Integration Services
 
 Currently supported integrations:
@@ -88,6 +153,30 @@ Future integration possibilities:
 - Trello
 - Linear
 - Custom integrations
+
+### Testing Structure
+
+The project uses a co-located testing approach with `__tests__` directories alongside the source code:
+
+```
+src/
+  ├── core/
+  │   ├── __tests__/
+  │   │   ├── EventPipeline.test.ts
+  │   │   └── EventRouter.test.ts
+  │   ├── EventPipeline.ts
+  │   └── EventRouter.ts
+  └── types/
+      └── events.ts
+```
+
+This structure was chosen over a separate `tests/` directory for several reasons:
+
+1. **Co-location**: Tests are placed next to the code they're testing, making it easier to find and maintain related files
+2. **Import Clarity**: Relative imports are simpler and more intuitive when tests are co-located
+3. **IDE Support**: Most IDEs provide better navigation and refactoring support when tests are next to their implementation
+4. **Package Boundaries**: When the code is split into packages, co-located tests move with their code
+5. **Test Discovery**: Jest automatically finds and runs tests in `__tests__` directories, making test discovery more reliable
 
 ## Getting Started
 

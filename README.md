@@ -228,28 +228,66 @@ The bot operates on an event-driven architecture that handles multiple integrati
    - Event replay capability
    - Audit logging
 
-### Event Interfaces
+### Integration System
 
-The system defines a comprehensive set of event interfaces that standardize communication between different components:
+The bot includes a flexible integration system that allows for easy addition of new service integrations while maintaining a stable event interface:
 
-1. **Base Event Structure**
-   - Common fields for all events (id, timestamp, source, type)
-   - Standardized metadata for tracking and correlation
-   - Type-safe payload definitions
+1. **Integration Adapter Pattern**
+   - Standardized adapter interface
+   - Service-specific implementations
+   - Clean separation of concerns
+   - Version management
+   - Capability discovery
 
-2. **Domain-Specific Events**
-   - Task Events: Creation, updates, completion, blocking
-   - Sprint Events: Start, end, metrics, blockers
-   - Team Events: Availability, workload, blockers
-   - Integration Events: Status, sync, errors
+2. **Adapter Lifecycle**
+   - Initialization
+   - Connection management
+   - Validation
+   - Event subscription
+   - Graceful shutdown
 
-3. **Event Documentation**
-   Detailed documentation for all event types and their structures can be found in [docs/events.md](docs/events.md), including:
-   - Interface definitions
-   - Example payloads
-   - Processing guidelines
-   - Validation rules
-   - Correlation strategies
+3. **Integration Registry**
+   - Central adapter management
+   - Dynamic registration
+   - Type-based lookup
+   - Connection state management
+   - Error handling
+
+4. **Capability System**
+   - Feature discovery
+   - Operation validation
+   - Event type mapping
+   - Service-specific operations
+   - Extensible interface
+
+5. **Example Integrations**
+   - GitHub Integration
+     - Issue management
+     - Pull request handling
+     - Repository events
+     - Team collaboration
+   
+   - JIRA Integration
+     - Issue tracking
+     - Sprint management
+     - Project events
+     - Workflow automation
+
+6. **Adding New Integrations**
+   To add a new integration:
+   1. Implement the `IntegrationAdapter` interface
+   2. Define integration capabilities
+   3. Handle service-specific events
+   4. Map to standard event types
+   5. Register with the integration registry
+
+7. **Integration Best Practices**
+   - Maintain backward compatibility
+   - Handle service-specific errors
+   - Implement retry mechanisms
+   - Cache when appropriate
+   - Log integration events
+   - Monitor connection health
 
 ### Rules Engine
 

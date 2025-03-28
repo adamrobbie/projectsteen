@@ -26,7 +26,8 @@ export enum EventType {
   // Integration Events
   SERVICE_CONNECTION_STATUS = 'service.connection.status',
   SYNC_STATUS = 'sync.status',
-  ERROR = 'error'
+  ERROR = 'error',
+  INTEGRATION_EVENT = 'integration.event'
 }
 
 export interface BaseEvent {

@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
-    "setup":"yarn install && cd frontend && yarn install",
-    "test": "jest",
-    "test:watch": "node --loader ts-node/esm node_modules/jest/bin/jest.js --watch",
-    "test:coverage": "node --loader ts-node/esm node_modules/jest/bin/jest.js --coverage",
-    "start": " yarn frontend:start && tsx src/server.ts",
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "frontend:start": "cd frontend && yarn start",
-    "frontend:build": "cd frontend && yarn build",
-    "frontend:test": "cd frontend && yarn test",
-    "frontend:dev": "cd frontend && yarn dev"
+    "setup": "yarn install && cd frontend && yarn install",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +43,7 @@
     "nodemon": "^3.1.0",
     "ts-jest": "^29.1.2",
     "tsx": "^4.7.1",
+    "turbo": "^2.5.0",
     "typescript": "^5.3.3"
   }
 }

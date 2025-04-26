@@ -17,7 +17,6 @@ An intelligent project management assistant that helps teams manage their Scrum 
 - **Backend**: Node.js, Express, TypeScript
 - **Frontend**: React, TypeScript, TailwindCSS
 - **AI/ML**: LangChain, OpenAI
-- **Vector Database**: LanceDB
 - **Build System**: Turborepo
 - **Testing**: Jest
 

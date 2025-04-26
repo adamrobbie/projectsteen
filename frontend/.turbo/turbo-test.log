@@ -1,0 +1,19 @@
+
+[2K[1G[1myarn run v1.22.22[22m
+[2K[1G[2m$ vitest run[22m
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90m/Users/adamrobbie/projectsteen/frontend[39m
+
+[90mstderr[2m | src/App.test.tsx[2m > [22m[2mApp[2m > [22m[2mrenders without crashing[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+ [32m✓[39m [2msrc/[22mApp[2m.test.tsx[22m[2m (1)[22m
+   [32m✓[39m App[2m (1)[22m
+     [32m✓[39m renders without crashing
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 16:36:28
+[2m   Duration [22m 614ms[2m (transform 104ms, setup 139ms, collect 99ms, tests 8ms, environment 190ms, prepare 57ms)[22m
+
+[?25h[2K[1G✨  Done in 1.07s.

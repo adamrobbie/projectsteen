@@ -1,6 +1,10 @@
 // src/api/gemmaBot.ts
 
+import express from 'express';
 import { GemmaScrumMasterAgent } from '../agents/GemmaAgent';
+
+// Initialize Express app
+const app = express();
 
 // Initialize the agent with Gemma 2
 const scrumBot = new GemmaScrumMasterAgent(

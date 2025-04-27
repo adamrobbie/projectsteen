@@ -4,7 +4,7 @@ import { BaseEvent, EventSource, EventType } from '../types/events.js';
 export class SteenBot implements Bot {
   private config: BotConfig;
   private status: BotStatus;
-  private pollInterval: NodeJS.Timeout | null;
+  private pollInterval: NodeJS.Timeout | null = null;
   private errorHandlers: ((error: Error) => void)[];
   private statusChangeHandlers: ((status: BotStatus) => void)[];
   private startTime: Date;
